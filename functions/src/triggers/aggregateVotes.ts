@@ -6,7 +6,7 @@ import { createTransactionCollisionAvoider } from '../helpers/transactionCollisi
 import { random } from '../helpers/random'
 import DocumentReference = admin.firestore.DocumentReference
 
-const shardCount = 5
+const shardCount = 10
 
 export const aggregateVotesCreate = functions.firestore
     .document('/projects/{projectId}/userVotes/{voteId}')
@@ -48,7 +48,6 @@ export const incrementVoteAggregate = async (
 
     // TODO :
     // add migration script
-    // Update dashboards
 
     const aggregatedTalkRef = firestoreDb
         .collection('projects')
